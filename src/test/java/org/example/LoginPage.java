@@ -10,6 +10,7 @@ public class LoginPage {
     By password_field=By.id("password");
     By login_button=By.id("login-button");
 
+
     public LoginPage(WebDriver driver) {
         this.driver = driver;
     }
@@ -34,5 +35,6 @@ public class LoginPage {
         Assert.assertEquals(redirectedURL,driver.getCurrentUrl());
 
     }
+
 }
 

@@ -37,6 +37,7 @@ public Object[][] loginData() throws Exception {
         driver = new EdgeDriver();
         driver.get("https://www.saucedemo.com/v1/");
         login = new LoginPage(driver);
+        driver.manage().window().maximize();
     }
 
     @Test()
@@ -55,6 +56,16 @@ public Object[][] loginData() throws Exception {
         home.verifCartIsclicked("https://www.saucedemo.com/v1/cart.html");
         home.clickCheckoutButton();
         home.verifyCheckoutButton("https://www.saucedemo.com/v1/checkout-step-one.html");
+        home.typeFirstName("mohamed");
+        home.typeLastName("tal3at");
+        home.typeZipcode("22512");
+
+        home.clickContinueButton();
+        home.finishCeckout();
+        home.verefyCheckoutFinsh();
+
+//        home.verifyCheckoutButton("https://www.saucedemo.com/v1/checkout-complete.html");
+
     }
 
     @AfterClass
