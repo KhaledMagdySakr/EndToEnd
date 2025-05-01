@@ -1,11 +1,14 @@
 package Testing;
 
 import Pages.*;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 public class PageTest extends BaseTests {
-
+SoftAssert softAssert;
 LoginPage L;
 inventoryPage I;
 CartPage Cart ;
@@ -22,6 +25,10 @@ ThankyouPage Thankyou;
     @Test(priority = 0,dataProvider = "ValidData")
     public void LoginPage(String username , String password) {
         L = new LoginPage(driver); /* Always initiate new driver*/
+        softAssert = new SoftAssert();
+
+        Assert.assertTrue(L.checkLoginPgTitle());
+        L.checkPgTitleValue();
 
         L.setUsername(username);
         L.setPassword(password);

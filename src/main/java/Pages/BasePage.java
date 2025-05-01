@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
+
 import java.time.Duration;
 import java.util.List;
 
@@ -33,7 +35,9 @@ public class BasePage {
         Assert.assertEquals(redirectedURL, driver.getCurrentUrl());
     }
     public void verifyText(By element , String expectedText) {
-        Assert.assertEquals(driver.findElement(element).getText(),expectedText);
+        SoftAssert softAssert=new SoftAssert();
+        softAssert.assertEquals(driver.findElement(element).getText(),expectedText);
+        softAssert.assertAll();
     }
     public void waitUntilElementIsVisible(By by, int time){
         wait = new WebDriverWait(driver, Duration.ofSeconds(time));

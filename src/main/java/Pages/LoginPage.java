@@ -11,6 +11,16 @@ public class LoginPage extends BasePage {
     By usernameField=By.id("user-name");
     By passwordField =By.id("password");
     By loginButton=By.id("login-button");
+    By pageTitle = By.xpath("//div[@class='login_logo']");
+
+    public boolean checkLoginPgTitle(){
+        waitUntilElementIsVisible(pageTitle,10);
+        return checkingDisplay(pageTitle);
+    }
+    public void checkPgTitleValue(){
+        waitUntilElementIsVisible(pageTitle,10);
+        verifyText(pageTitle,"Swag Labs");
+    }
 
 
    public void setUsername(String username){
