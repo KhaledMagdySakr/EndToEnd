@@ -6,21 +6,23 @@ import org.testng.annotations.Test;
 
 public class PageTest extends BaseTests {
 
-LoginPage L ;
+LoginPage L;
 inventoryPage I;
 CartPage Cart ;
 CheckoutPage Checkout ;
 FinalCheckout Final ;
 ThankyouPage Thankyou;
 
-    @DataProvider(name = "loginData")
+    @DataProvider(name = "ValidData")
     public Object[][] loginData() throws Exception {
         ExcelReader excelReader = new ExcelReader();
         return excelReader.getExcelData();
     }
 
-    @Test(priority = 0,dataProvider = "loginData")
+    @Test(priority = 0,dataProvider = "ValidData")
     public void LoginPage(String username , String password) {
+        L = new LoginPage(driver);
+
         L.setUsername(username);
         L.setPassword(password);
         L.clickOnLogin();

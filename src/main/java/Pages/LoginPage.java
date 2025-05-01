@@ -9,7 +9,7 @@ public class LoginPage extends BasePage {
     }
 
     By usernameField=By.id("user-name");
-    By passwordField =By.id("passwordField");
+    By passwordField =By.id("password");
     By loginButton=By.id("login-button");
 
 

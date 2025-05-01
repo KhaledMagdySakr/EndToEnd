@@ -13,12 +13,12 @@ public class ExcelReader {
     static FileInputStream fis;
 
     public FileInputStream getFileInputStream(){
-        String filePath = System.getProperty("user.dir")+"/src/test/java/Testing/testData/testData.xlsx";
+        String filePath = System.getProperty("user.dir")+"/src/Data/TestData.xlsx";
         File srcFile = new File(filePath);
         try {
             fis = new FileInputStream(srcFile);
         } catch (FileNotFoundException e) {
-            System.out.println("ERROR occurred"+e.getMessage());;
+            System.out.println("ERROR occurred"+e.getMessage());
         }
         return fis;
     }
@@ -28,7 +28,7 @@ public class ExcelReader {
         XSSFWorkbook wb = new XSSFWorkbook(fis);
         XSSFSheet sheet = wb.getSheetAt(0);
         int numberOfRows = (sheet.getLastRowNum()+1);
-        int numberOfColumns = 4;
+        int numberOfColumns = 2;
 
         String[][] arrayExcelData = new String[numberOfRows][numberOfColumns];
         for(int i =0;i<numberOfRows;i++){
