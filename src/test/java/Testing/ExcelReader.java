@@ -1,4 +1,4 @@
-package org.example;
+package Testing;
 //
 //import org.apache.poi.xssf.usermodel.XSSFRow;
 //import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -54,7 +54,7 @@ public class ExcelReader {
     static FileInputStream fis;
 
     public FileInputStream getFileInputStream(){
-        String filePath = System.getProperty("user.dir")+"/src/main/java/org/example/testData/testData.xlsx";
+        String filePath = System.getProperty("user.dir")+"/src/test/java/Testing/testData/testData.xlsx";
         File srcFile = new File(filePath);
         try {
             fis = new FileInputStream(srcFile);
