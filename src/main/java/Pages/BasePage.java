@@ -58,5 +58,6 @@ public class BasePage {
     public boolean checkingDisplay(By by){
         return driver.findElement(by).isDisplayed();
     }
+
 }
 
