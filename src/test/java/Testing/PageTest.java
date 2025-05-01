@@ -9,7 +9,7 @@ import org.testng.asserts.SoftAssert;
 
 public class PageTest extends BaseTests {
 SoftAssert softAssert;
-LoginPage L;
+LoginPage L ;
 inventoryPage I;
 CartPage Cart ;
 CheckoutPage Checkout ;
@@ -52,5 +52,10 @@ ThankyouPage Thankyou;
 //        B.verifyUrl(Final.FinalCheckoutpagelink);
 //        B.clickButton(Final.FinishButton);
 //        B.verifyText(Thankyou.ThankYouPath,Thankyou.ThankYouText);
+    }
+    @Test(priority = 1)
+    public void iverntory(){
+        I = new inventoryPage(driver);
+
     }
 }
