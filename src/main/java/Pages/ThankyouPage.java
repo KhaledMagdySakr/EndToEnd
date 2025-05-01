@@ -1,9 +1,9 @@
-package Testing;
+package Pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class ThankyouPage extends BasePage{
+public class ThankyouPage extends BasePage {
     public ThankyouPage(WebDriver driver) {
         super(driver);
     }

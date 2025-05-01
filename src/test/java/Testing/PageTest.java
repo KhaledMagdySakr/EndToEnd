@@ -1,8 +1,6 @@
-package Testing.testData;
+package Testing;
 
-import Testing.*;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.edge.EdgeDriver;
+import Pages.*;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 

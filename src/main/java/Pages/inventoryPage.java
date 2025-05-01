@@ -1,6 +1,5 @@
-package Testing;
+package Pages;
 
-import Testing.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 

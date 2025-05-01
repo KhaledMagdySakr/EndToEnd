@@ -1,8 +1,8 @@
-package Testing;
+package Pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class FinalCheckout extends BasePage{
+public class FinalCheckout extends BasePage {
     public FinalCheckout(WebDriver driver) {
         super(driver);
     }
