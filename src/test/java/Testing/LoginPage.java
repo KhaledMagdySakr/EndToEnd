@@ -7,7 +7,27 @@ public class LoginPage extends BasePage{
     public LoginPage(WebDriver driver) {
         super(driver);
     }
-    By username=By.id("user-name");
-    By password=By.id("password");
+
+    By usernameField=By.id("user-name");
+    By passwordField =By.id("passwordField");
     By loginButton=By.id("login-button");
+
+
+   public void setUsername(String username){
+       waitUntilElementIsVisible(usernameField,5);
+       typeText(usernameField,username);
+   }
+    public void setPassword(String password){
+    waitUntilElementIsVisible(passwordField,5);
+       typeText(passwordField,password);
+    }
+    public void clickOnLogin(){
+       waitUntilElementIsClickable(loginButton,5);
+       clickButton(loginButton);
+    }
+    public void setTimer(int i){
+       wait(i);
+    }
+
+
 }
