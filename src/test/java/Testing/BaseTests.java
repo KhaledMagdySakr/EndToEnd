@@ -1,9 +1,21 @@
 package Testing;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.annotations.*;
-public class BaseTests extends BasePage{
 
-@DataProvider(name = "loginData")
+import java.awt.*;
+
+public class BaseTests{
+    WebDriver driver = new EdgeDriver();
+    BasePage B = new BasePage(driver);
+    LoginPage L = new LoginPage(driver);
+    inventoryPage I = new inventoryPage(driver);
+    CartPage Cart = new CartPage(driver);
+    CheckoutPage Checkout = new CheckoutPage(driver);
+    FinalCheckout Final = new FinalCheckout(driver);
+    ThankyouPage Thankyou = new ThankyouPage(driver);
+ @DataProvider(name = "loginData")
 public Object[][] loginData() throws Exception {
     ExcelReader excelReader = new ExcelReader();
     return excelReader.getExcelData();
@@ -13,29 +25,29 @@ public Object[][] loginData() throws Exception {
         driver.get("https://www.saucedemo.com/v1/");
         driver.manage().window().maximize();
     }
-
     @Test()
     public void EndtoEndTest() {
-        wait(5);
-        typeText(By.id("user-name"),"standard_user");
-        typePassword(By.id("password"),"secret_sauce");
-        clickButton(By.id("login-button"));
-        wait(5);
-        clickButton(By.xpath("//div[@class='inventory_list']//div[1]//div[3]//button[1]"));
-        verifyAddToCart();
-        clickButton(By.xpath("//*[name()='path' and contains(@fill,'currentCol')]"));
-        wait(5);
-        verifCartIsclicked("https://www.saucedemo.com/v1/cart.html");
-        clickButton(By.xpath("//a[@class='btn_action checkout_button']"));
-        wait(5);
-        verifyCheckoutButton("https://www.saucedemo.com/v1/checkout-step-one.html");
-        typeText(By.id("first-name"),"mohamed");
-        typeText(By.id("last-name"),"tal3at");
-        typeText(By.id("postal-code"),"22512");
-        clickButton(By.xpath("//input[@value='CONTINUE']"));
-        wait(5);
-        clickButton(By.xpath("//a[@class='btn_action cart_button']"));
-        verefyCheckoutFinsh();
+        B.wait(5);
+        B.typeText(L.username,"standard_user");
+        B.typePassword(L.password,"secret_sauce");
+        B.clickButton(L.loginButton);
+        B.wait(5);
+        B.clickButton(I.SauceLabsBackpack);
+        B.clickButton(I.SauceLabsFleeceJacket);
+        B.clickButton(I.Cartbutton);
+        B.wait(5);
+        B.verifyUrl(Cart.Cartpagelink);
+        B.clickButton(Cart.Checkoutbutton);
+        B.wait(5);
+        B.verifyUrl(Checkout.Checkoutpagelink);
+        B.typeText(Checkout.FristName,"mohamed");
+        B.typeText(Checkout.LastName,"tal3at");
+        B.typeText(Checkout.PostalCode,"22512");
+        B.clickButton(Checkout.ContinueButton);
+        B.wait(5);
+        B.verifyUrl(Final.FinalCheckoutpagelink);
+        B.clickButton(Final.FinishButton);
+        B.verifyText(Thankyou.ThankYouPath,Thankyou.ThankYouText);
     }
 
     @AfterClass
