@@ -21,7 +21,7 @@ ThankyouPage Thankyou;
 
     @Test(priority = 0,dataProvider = "ValidData")
     public void LoginPage(String username , String password) {
-        L = new LoginPage(driver);
+        L = new LoginPage(driver); /* Always initiate new driver*/
 
         L.setUsername(username);
         L.setPassword(password);
