@@ -7,9 +7,9 @@ public class CheckoutPage extends BasePage {
     public CheckoutPage(WebDriver driver) {
         super(driver);
     }
-    String Checkoutpagelink = "https://www.saucedemo.com/v1/checkout-step-one.html";
-    By FristName = By.id("first-name");
-    By LastName = By.id("last-name");
-    By PostalCode = By.id("postal-code");
-    By ContinueButton = By.xpath("//input[@value='CONTINUE']");
+    public String Checkoutpagelink = "https://www.saucedemo.com/checkout-step-one.html";
+    public By FristName = By.id("first-name");
+    public By LastName = By.id("last-name");
+    public By PostalCode = By.id("postal-code");
+    public By ContinueButton = By.xpath("//input[@id='continue']");
 }

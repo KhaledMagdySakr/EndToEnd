@@ -6,7 +6,7 @@ public class FinalCheckout extends BasePage {
     public FinalCheckout(WebDriver driver) {
         super(driver);
     }
-    String FinalCheckoutpagelink = "https://www.saucedemo.com/v1/checkout-step-two.html";
-    By FinishButton = By.xpath("//a[@class='btn_action cart_button']");
+    public String FinalCheckoutpagelink = "https://www.saucedemo.com/checkout-step-two.html";
+    public By FinishButton = By.xpath("//button[@id='finish']");
 
 }
