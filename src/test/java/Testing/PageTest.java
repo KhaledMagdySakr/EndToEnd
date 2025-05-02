@@ -26,32 +26,11 @@ public class PageTest extends BaseTests {
     public void LoginPage(String username, String password) {
         L = new LoginPage(driver); /* Always initiate new driver*/
         softAssert = new SoftAssert();
-        L.wait(5);
         Assert.assertTrue(L.checkLoginPgTitle());
         L.checkPgTitleValue();
-
         L.setUsername(username);
         L.setPassword(password);
         L.clickOnLogin();
-        L.setTimer(5);
-
-//        B.wait(5);
-//        B.clickButton(I.SauceLabsBackpack);
-//        B.clickButton(I.SauceLabsFleeceJacket);
-//        B.clickButton(I.Cartbutton);
-//        B.wait(5);
-//        B.verifyUrl(Cart.Cartpagelink);
-//        B.clickButton(Cart.Checkoutbutton);
-//        B.wait(5);
-//        B.verifyUrl(Checkout.Checkoutpagelink);
-//        B.typeText(Checkout.FristName,"mohamed");
-//        B.typeText(Checkout.LastName,"tal3at");
-//        B.typeText(Checkout.PostalCode,"22512");
-//        B.clickButton(Checkout.ContinueButton);
-//        B.wait(5);
-//        B.verifyUrl(Final.FinalCheckoutpagelink);
-//        B.clickButton(Final.FinishButton);
-//        B.verifyText(Thankyou.ThankYouPath,Thankyou.ThankYouText);
     }
 
     @Test(priority = 1)

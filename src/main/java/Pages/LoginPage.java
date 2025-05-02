@@ -35,9 +35,5 @@ public class LoginPage extends BasePage {
        waitUntilElementIsClickable(loginButton,5);
        clickButton(loginButton);
     }
-    public void setTimer(int i){
-       wait(i);
-    }
-
 
 }
