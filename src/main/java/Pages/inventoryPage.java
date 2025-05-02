@@ -14,12 +14,12 @@ public class inventoryPage extends BasePage {
 
     public void clickAddToCart() {
         waitUntilElementIsClickable(addTocartButtons,5);
-        int j = getElementsListSize(addTocartButtons);
+        int j = getElementsListSize(addTocartButtons)-1;
         int counter = 0;
 
         for (int i = 0; i < j; i++) {
             int random = (int) (Math.random() * j);
-            if (counter != 2) {
+            if (counter < 2) {
                 elementsList(addTocartButtons, random);
                 counter++;
             }

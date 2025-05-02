@@ -15,7 +15,7 @@ public class BaseTests{
     public void setup() {
      driver = new EdgeDriver();
         driver.get("https://www.saucedemo.com/");
-//        driver.manage().window().maximize();
+        driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
     }
 
